@@ -1,7 +1,7 @@
-﻿var lista = new int[3];
-lista[0] = 1;
-lista[1] = 2;
-lista[2] = 3;
+﻿var lista = new int[4];
 
-Console.WriteLine(lista[0]);
-Console.WriteLine(lista[2]);
+for (var i = 0; i < lista.Count(); i++)
+    lista[i] = i;
+
+for (var i = 0; i < lista.Count(); i++)
+    Console.WriteLine(lista[i]);
