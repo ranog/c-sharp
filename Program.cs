@@ -1,3 +1,13 @@
-﻿for(var i = 1; i <= 10; i++)
-    for(var j = 1; j <= 10; j++)
+﻿var i = 1;
+
+while (i <= 10)
+{
+    var j = 1;
+    while (j <= 10)
+    {
         Console.WriteLine($"{i} * {j} = {i * j}");
+        j++;
+    }
+
+    i++;
+}
