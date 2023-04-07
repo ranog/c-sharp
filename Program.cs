@@ -8,10 +8,9 @@ lista.Add(10);
 lista.Add(2);
 lista.Add(8);
 
-Console.WriteLine(lista.First());
-Console.WriteLine(lista.Last());
+// for (var i = 0; i < lista.Count(); i++)
+//     Console.WriteLine(lista.ElementAt(i));
     
-var sublist = lista.Where(l => l > 5 && l < 10);
-
-for (var i = 0; i < sublist.Count(); i++)
-    Console.WriteLine(sublist.ElementAt(i));
+foreach(var x in lista)
+    Console.WriteLine(x);
+    
