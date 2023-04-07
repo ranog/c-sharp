@@ -1,17 +1,11 @@
-﻿var i = 1;
-while (i <= 10)
-{
-    var j = 1;
-    while (j <= 10)
-    {
-        if (j == 7 || j == 8 || j == 9)
-        {
-            j++;
-            //continue;
-            break;
-        }
-        Console.WriteLine($"{i} * {j} = {i * j}");
-        j++;
-    }
-    i++;
-}
+﻿// Criar um array com 2 posições de inteiros e armazenar em uma variável a soma total da lista.
+// A variável deve ser imprimida no console.
+
+var array = new int[2];
+
+array[0] = 1;
+array[1] = 2;
+
+var array_sum = array.Sum();
+
+Console.WriteLine($"Resultado é {array_sum}.");
