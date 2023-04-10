@@ -4,7 +4,7 @@
 var data = new List<int> { 2, 8, 3, 10, 5, 4, 7, 9, 1 };
 
 var first_data = data.Where(f => f < 6);
-var second_data = data.Where(f => f > 5);
+var second_data = data.Where(s => s > 5);
 
 var sum_of_first_data = first_data.Sum();
 var sum_of_second_data = second_data.Sum();
