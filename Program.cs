@@ -1,7 +1,10 @@
-﻿var mensagem1 = FormataMensagem("Henrique", 500);
-var mensagem2 = FormataMensagem("Maria", 1000);
+﻿FormataMensagem("Henrique", 500, out var mensagem1);
+Console.WriteLine(mensagem1);
 
-string FormataMensagem(string nome, decimal valor)
+FormataMensagem("Maria", 1000, out var mensagem2);
+Console.WriteLine(mensagem2);
+
+void FormataMensagem(string nome, decimal valor, out string mensagem)
 {
-    return $"O funcionário {nome} recebe {valor}.";
+    mensagem = $"O funcionário {nome} recebe {valor}.";
 }
