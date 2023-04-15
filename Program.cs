@@ -1,13 +1,7 @@
-﻿string mensagem = string.Empty;
-
-var resultado = FormataMensagem("Maria", 1000);
-if (resultado)
-    Console.WriteLine(mensagem);
-
-bool FormataMensagem(string nome, decimal valor)
+﻿void Dividir(int num1, int num2)
 {
-    if (valor < 500)
-        return false;
-    var mensagem = $"O funcionário {nome} recebe {valor}.";
-    return true;
+    var result = num1 / num2;
+    Console.WriteLine(result);
 }
+
+Dividir(5, 0);
