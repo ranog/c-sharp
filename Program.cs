@@ -1,15 +1,13 @@
-﻿(var resultado1, var mensagem1) = FormataMensagem("Henrique", 499);
-if (resultado1)
-    Console.WriteLine(mensagem1);
+﻿string mensagem = string.Empty;
 
-(var resultado2, var mensagem2) = FormataMensagem("Maria", 1000);
-if (resultado2)
-    Console.WriteLine(mensagem2);
+var resultado = FormataMensagem("Maria", 1000);
+if (resultado)
+    Console.WriteLine(mensagem);
 
-(bool, string) FormataMensagem(string nome, decimal valor)
+bool FormataMensagem(string nome, decimal valor)
 {
     if (valor < 500)
-        return (false, string.Empty);
+        return false;
     var mensagem = $"O funcionário {nome} recebe {valor}.";
-    return (true, mensagem);
+    return true;
 }
