@@ -1,14 +1,14 @@
-﻿void Dividir(int num1, int num2){
-    try{
-        var result = num1 / num2;
-        Console.WriteLine(result);
-    }
-    catch(NotImplementedException ex){
-        Console.WriteLine($"Não é possivel efetuar a divisão: {ex.Message}");
-    }
-    catch(DivideByZeroException ex){
-        Console.WriteLine($"Não é possivel efetuar a divisão: {ex.Message}");
-    }
-}
+﻿var endereco = new Endereco();
+endereco.Rua = "Rua X";
+endereco.Numero = "42";
+endereco.Cidade = "Y";
+endereco.Estado = "OK";
 
-Dividir(5, 0);
+Console.WriteLine(endereco.Rua);
+
+struct Endereco{
+    public string Rua;
+    public string Numero;
+    public string Cidade;
+    public string Estado;
+}
