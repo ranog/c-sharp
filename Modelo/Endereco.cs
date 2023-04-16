@@ -1,6 +1,6 @@
 namespace modelo;
 
-struct Endereco
+public struct Endereco
 {
     public string Rua;
     public string Numero;
