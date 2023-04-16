@@ -1,39 +1,6 @@
-﻿var endereco = new Endereco(rua: "Rua X", numero: "42", cidade: "Y", estado: "Ok");
+﻿using modelo;
+
+var endereco = new Endereco(rua: "Rua X", numero: "42", cidade: "Y", estado: "Ok");
 
 Console.WriteLine(endereco.EnderecoCompleto());
 Console.WriteLine(endereco.Valido);
-
-struct Endereco
-{
-    public string Rua;
-    public string Numero;
-    public string Cidade;
-    public string Estado;
-    public bool Valido;
-
-    public Endereco(string rua, string numero, string cidade, string estado)
-    {
-        Rua = rua;
-        Numero = numero;
-        Cidade = cidade;
-        Estado = estado;
-        Valido = false;
-        Validar();
-    }
-
-    private void Validar()
-    {
-        if (string.IsNullOrEmpty(Rua) || string.IsNullOrEmpty(Numero) || string.IsNullOrEmpty(Cidade) ||
-            string.IsNullOrEmpty(Estado))
-            Valido = false;
-        else
-        {
-            Valido = true;
-        }
-    }
-
-    public string EnderecoCompleto()
-    {
-        return $"{Rua}, {Numero}, {Cidade} - {Estado}";
-    }
-}
