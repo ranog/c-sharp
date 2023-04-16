@@ -1,14 +1,24 @@
-﻿var endereco = new Endereco();
-endereco.Rua = "Rua X";
-endereco.Numero = "42";
-endereco.Cidade = "Y";
-endereco.Estado = "OK";
+﻿var endereco = new Endereco(rua: "Rua X", numero: "42", cidade: "Y", estado: "OK");
 
-Console.WriteLine(endereco.Rua);
+Console.WriteLine(endereco.EnderecoCompleto());
 
-struct Endereco{
+struct Endereco
+{
     public string Rua;
     public string Numero;
     public string Cidade;
     public string Estado;
+
+    public Endereco(string rua, string numero, string cidade, string estado)
+    {
+        Rua = rua;
+        Numero = numero;
+        Cidade = cidade;
+        Estado = estado;
+    }
+
+    public string EnderecoCompleto()
+    {
+        return $"{Rua}, {Numero}, {Cidade} - {Estado}";
+    }
 }
