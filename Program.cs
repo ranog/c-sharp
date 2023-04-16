@@ -1,7 +1,19 @@
 ﻿using modelo;
 
-var endereco = new Endereco(rua: "Rua X", numero: "42", cidade: "Y", estado: "Ok");
-var pessoa = new Pessoa(nome: "XPTO", idade: 42, endereco: endereco);
+var pessoa = new Pessoa("XPTO", 42, new Endereco("Rua X", "42", "Y", "Ok"));
+var carro = new Carro();
+PreencheObjeto(carro);
 
-Console.WriteLine(pessoa.Nome);
-Console.WriteLine(pessoa.Endereco.EnderecoCompleto());
+Console.WriteLine(carro.Nome);
+
+void PreencheObjeto(Carro carro)
+{
+    carro.Nome = "Gol";
+    carro.Ano = 2021;
+}
+
+class Carro
+{
+    public string Nome;
+    public int Ano;
+}
