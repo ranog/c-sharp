@@ -1,19 +1,9 @@
-﻿using modelo;
+﻿Console.WriteLine(UtilDate.HoraAtual());
 
-var carro = new Carro("Gol", 2021);
-
-Console.WriteLine(carro.Nome);
-Console.WriteLine(carro.Nome);
-
-
-class Carro
+static class UtilDate
 {
-    public string Nome { get; private set; }
-    public int Ano { get; private set; }
-
-    public Carro(string nome, int ano)
+    public static string HoraAtual()
     {
-        Nome = nome;
-        Ano = ano;
+        return DateTime.Now.Hour.ToString();
     }
 }
