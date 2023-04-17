@@ -1,14 +1,39 @@
-﻿// Criar um modelo que irá receber os items para compra do mês, nesse modelo teremos a data que a
-// compra irá acontecer, mercado e os itens para comprar.
+﻿var retangulo = new Retangulo();
+retangulo.Altura = 2;
+retangulo.Largura = 2;
 
-using modelo;
+var circulo = new Circulo();
+circulo.Raio = 2;
 
-var compraDoMes = new Compras(DateTime.Now, "XPTO",
-    new List<string>() { "pasta de dente", "sabonete", "sabão de pó" });
+ExibeArea(retangulo);
+ExibeArea(circulo);
 
-Console.WriteLine($"Data da compra: {compraDoMes.Data}");
-Console.WriteLine($"Estabelecimento: {compraDoMes.Mercado}");
+void ExibeArea(AreaDeObjeto areaDeObjeto)
+{
+    Console.WriteLine($"Area: {areaDeObjeto.Area()}");
+}
 
-Console.WriteLine("Itens comprados:");
-for (int i = 0; i < compraDoMes.Itens.Count(); i++)
-    Console.WriteLine($"- {compraDoMes.Itens[i]}");
+interface AreaDeObjeto
+{
+    float Area();
+}
+
+class Retangulo: AreaDeObjeto
+{
+    public float Largura;
+    public float Altura;
+    public float Area()
+    {
+        return Largura * Altura;
+    }
+}
+
+class Circulo: AreaDeObjeto
+{
+    public float Raio;
+    public float Area()
+    {
+        return (float)(Math.PI * Raio * Raio);
+    }
+}
+
