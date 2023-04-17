@@ -1,52 +1,20 @@
-﻿var retangulo = new Retangulo();
-retangulo.Altura = 2;
-retangulo.Largura = 2;
+﻿var pessoa = new Pessoa("XPTO");
+Console.WriteLine(pessoa.Nome);
+Console.WriteLine(pessoa.Idade);
 
-var circulo = new Circulo();
-circulo.Raio = 2;
-
-ExibeArea(retangulo);
-ExibeArea(circulo);
-
-void ExibeArea(AreaDeObjeto areaDeObjeto)
+class Pessoa
 {
-    Console.WriteLine($"Area do {areaDeObjeto.TipoDeObjecto}: {areaDeObjeto.Area()}");
-}
+    public string Nome { get; set; }
+    public int Idade { get; set; }
 
-abstract class AreaDeObjeto
-{
-    public string TipoDeObjecto;
-    public abstract float Area();
-}
-
-class Retangulo: AreaDeObjeto
-{
-    public float Largura;
-    public float Altura;
-
-    public Retangulo()
+    public Pessoa(string nome)
     {
-        TipoDeObjecto = "Retangulo";
+        Nome = nome;
     }
-    
-    public override float Area()
+
+    public Pessoa(string nome, int idade)
     {
-        return Largura * Altura;
+        Nome = nome;
+        Idade = idade;
     }
 }
-
-class Circulo: AreaDeObjeto
-{
-    public float Raio;
-    
-    public Circulo()
-    {
-        TipoDeObjecto = "Circulo";
-    }
-    
-    public override float Area()
-    {
-        return (float)(Math.PI * Raio * Raio);
-    }
-}
-
