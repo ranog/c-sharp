@@ -1,4 +1,4 @@
-﻿var pessoa = new Pessoa("XPTO");
+﻿var pessoa = new Pessoa("XPTO", 42);
 Console.WriteLine(pessoa.Nome);
 Console.WriteLine(pessoa.Idade);
 
