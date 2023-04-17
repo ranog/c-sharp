@@ -1,12 +1,12 @@
 namespace modelo;
 
-public class CompraDoMes
+public class Compras
 {
     public DateTime Data { get; set; }
-    public string Mercado { get; set; }
+    public string Mercado { get; set; } = default!;
     public List<string> Itens { get; set; }
 
-    public CompraDoMes(DateTime data, string mercado, List<string> itens)
+    public Compras(DateTime data, string mercado, List<string> itens)
     {
         Data = data;
         Mercado = mercado;

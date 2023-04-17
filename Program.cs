@@ -3,7 +3,7 @@
 
 using modelo;
 
-var compraDoMes = new CompraDoMes(DateTime.Now, "XPTO",
+var compraDoMes = new Compras(DateTime.Now, "XPTO",
     new List<string>() { "pasta de dente", "sabonete", "sabão de pó" });
 
 Console.WriteLine($"Data da compra: {compraDoMes.Data}");
