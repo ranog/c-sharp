@@ -10,19 +10,26 @@ ExibeArea(circulo);
 
 void ExibeArea(AreaDeObjeto areaDeObjeto)
 {
-    Console.WriteLine($"Area: {areaDeObjeto.Area()}");
+    Console.WriteLine($"Area do {areaDeObjeto.TipoDeObjecto}: {areaDeObjeto.Area()}");
 }
 
-interface AreaDeObjeto
+abstract class AreaDeObjeto
 {
-    float Area();
+    public string TipoDeObjecto;
+    public abstract float Area();
 }
 
 class Retangulo: AreaDeObjeto
 {
     public float Largura;
     public float Altura;
-    public float Area()
+
+    public Retangulo()
+    {
+        TipoDeObjecto = "Retangulo";
+    }
+    
+    public override float Area()
     {
         return Largura * Altura;
     }
@@ -31,7 +38,13 @@ class Retangulo: AreaDeObjeto
 class Circulo: AreaDeObjeto
 {
     public float Raio;
-    public float Area()
+    
+    public Circulo()
+    {
+        TipoDeObjecto = "Circulo";
+    }
+    
+    public override float Area()
     {
         return (float)(Math.PI * Raio * Raio);
     }
