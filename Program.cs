@@ -1,19 +1,19 @@
 ﻿using modelo;
 
-var pessoa = new Pessoa("XPTO", 42, new Endereco("Rua X", "42", "Y", "Ok"));
-var carro = new Carro();
-PreencheObjeto(carro);
+var carro = new Carro("Gol", 2021);
 
 Console.WriteLine(carro.Nome);
+Console.WriteLine(carro.Nome);
 
-void PreencheObjeto(Carro carro)
-{
-    carro.Nome = "Gol";
-    carro.Ano = 2021;
-}
 
 class Carro
 {
-    public string Nome;
-    public int Ano;
+    public string Nome { get; private set; }
+    public int Ano { get; private set; }
+
+    public Carro(string nome, int ano)
+    {
+        Nome = nome;
+        Ano = ano;
+    }
 }
