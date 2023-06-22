@@ -7,3 +7,12 @@ repos:
         language: dotnet
         types_or: ['c#', 'vb']
         entry: dotnet-format --include --fix-whitespace
+    - repo: https://github.com/prettier/prettier
+    rev: <versão_desejada>
+    hooks:
+      - id: prettier
+        name: Prettier
+        types:
+          - c#
+          - vb
+        entry: prettier --write .
