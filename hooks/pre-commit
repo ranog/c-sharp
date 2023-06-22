@@ -1,2 +1,0 @@
-#!/bin/sh
-git diff --staged --diff-filter=d --cached --name-only | xargs sed -i '/^[[:space:]]*$/d'
