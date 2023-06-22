@@ -15,4 +15,4 @@ repos:
         types:
           - c#
           - vb
-        entry: prettier --check
+        entry: prettier --check .
