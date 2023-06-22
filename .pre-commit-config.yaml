@@ -1,6 +1,26 @@
 repos:
   - repo: https://github.com/dotnet/format
-    rev: "v5.1.225507"  # Specify a tag or sha here, or run "pre-commit autoupdate"
+    rev: <versão_desejada>
     hooks:
       - id: dotnet-format
-        entry: dotnet-format --fix-whitespace
+        name: dotnet-format
+        entry: dotnet-format
+        language: system
+        types: [file]
+        files: \.(cs|csx)$
+        pass_filenames: true
+        args: [--folder, .]
+        additional_dependencies: ['EditorConfig.Tools']
+        exclude: '\.editorconfig'
+        stages: [commit]
+        description: "Format C# code using dotnet-format"
+
+      - id: editorconfig-cli
+        name: EditorConfig CLI
+        entry: editorconfig
+        language: system
+        types: [file]
+        files: \.(cs|csx)$
+        exclude: '\.editorconfig'
+        stages: [commit]
+        description: "Check C# code formatting using EditorConfig CLI"
