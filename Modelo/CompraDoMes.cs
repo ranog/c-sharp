@@ -8,6 +8,10 @@ public class Compras
 
     public Compras(DateTime data, string mercado, List<string> itens)
     {
+
+
+
+
         Data = data;
         Mercado = mercado;
         Itens = itens;
