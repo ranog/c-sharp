@@ -1,2 +1,18 @@
 #!/bin/sh
-git diff --staged --diff-filter=d --cached --name-only | xargs sed -i '/^[[:space:]]*$/d'
+# git diff --staged --diff-filter=d --cached --name-only | xargs sed -i '/^[[:space:]]*$/d'
+
+
+# Verifica se há linhas em branco extras
+if git diff --staged --diff-filter=d --cached --name-only | xargs grep -En '^$' | grep -Ev '.editorconfig' ; then
+    echo "Erro: Existem linhas em branco extras nos arquivos a serem confirmados."
+    echo "Por favor, remova as linhas em branco extras antes de confirmar."
+fi
+
+# Executa o dotnet-format para formatar os arquivos
+dotnet format --dry-run --verbosity quiet
+
+# Verifica se há alterações após o dotnet-format
+if ! git diff --staged --name-only --exit-code; then
+    echo "Erro: Existem alterações de formatação nos arquivos."
+    echo "Por favor, execute 'dotnet format' para corrigir a formatação antes de confirmar."
+fi
