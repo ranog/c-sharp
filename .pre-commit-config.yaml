@@ -1,9 +1,25 @@
+# repos:
+#   - repo: https://github.com/dotnet/format
+#     rev: "v5.1.225507"  # Specify a tag or sha here, or run "pre-commit autoupdate"
+#     hooks:
+#       - id: dotnet-format
+#         name: dotnet format
+#         language: dotnet
+#         types_or: ['c#']
+#         entry: dotnet-format --check --fix-whitespace
+
+
 repos:
   - repo: https://github.com/dotnet/format
-    rev: "v5.1.225507"  # Specify a tag or sha here, or run "pre-commit autoupdate"
+    rev: "v5.1.225507"
     hooks:
       - id: dotnet-format
-        name: dotnet format
-        language: dotnet
-        types_or: ['c#']
-        entry: dotnet-format --check --fix-whitespace
+        name: dotnet-format
+        entry: dotnet-format
+        language: system
+        types: [file]
+        files: \.(cs|csx)$
+        pass_filenames: true
+        args: [--folder, .]
+        stages: [commit]
+        description: "Format C# code using dotnet-format"
