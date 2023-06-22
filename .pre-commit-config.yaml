@@ -5,14 +5,13 @@ repos:
       - id: dotnet-format
         name: dotnet format
         language: dotnet
-        types_or: ['c#', 'vb']
+        types_or: ['c#']
         entry: dotnet-format --include --fix-whitespace
-    - repo: https://github.com/prettier/prettier
-    rev: <versão_desejada>
+  - repo: https://github.com/prettier/prettier
+    rev: "2.8.8"
     hooks:
       - id: prettier
         name: Prettier
         types:
           - c#
-          - vb
-        entry: prettier --check .
+        entry: prettier --write .
