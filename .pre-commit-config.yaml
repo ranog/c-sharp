@@ -3,3 +3,7 @@ repos:
     rev: "v5.1.225507"  # Specify a tag or sha here, or run "pre-commit autoupdate"
     hooks:
       - id: dotnet-format
+        name: dotnet format
+        language: dotnet
+        types_or: ['c#', 'vb']
+        entry: dotnet-format --include
