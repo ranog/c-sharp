@@ -12,6 +12,9 @@ public class Compras
 
 
 
+
+
+
         Data = data;
         Mercado = mercado;
         Itens = itens;
