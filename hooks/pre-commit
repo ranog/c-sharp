@@ -1,9 +1,6 @@
 #!/bin/sh
 git diff --staged --diff-filter=d --cached --name-only | xargs sed -i '/^[[:space:]]*$/d'
 
-# Executa o dotnet-format para formatar os arquivos
-dotnet format --dry-run --verbosity quiet
-
 # Verifica se há alterações após o dotnet-format
 if ! git diff --staged --name-only --exit-code; then
     echo "Erro: Existem alterações de formatação nos arquivos."
