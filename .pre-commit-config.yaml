@@ -6,4 +6,4 @@ repos:
         name: dotnet format
         language: dotnet
         types_or: ['c#']
-        entry: dotnet-format --include --check --fix-whitespace
+        entry: dotnet-format --check .
