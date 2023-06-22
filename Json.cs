@@ -8,6 +8,10 @@ public class Json{
         var jsonPerson = JsonSerializer.Serialize(person);
         Console.WriteLine(jsonPerson);
 
+
+
+
+
         var jsonToConvert = "{\"Id\": 42, \"Name\": \"Towel\"}";
         var convertedPerson = JsonSerializer.Deserialize<Person>(jsonToConvert);
         Console.WriteLine(convertedPerson.Id);
