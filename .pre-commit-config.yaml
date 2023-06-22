@@ -3,11 +3,3 @@ repos:
     rev: "v5.1.225507"  # Specify a tag or sha here, or run "pre-commit autoupdate"
     hooks:
       - id: dotnet-format
-  - repo: local
-    hooks:
-      #Use dotnet format already installed on your machine
-      - id: dotnet-format
-        name: dotnet-format
-        language: system
-        entry: dotnet format --include
-        types_or: [ "c#", "vb" ]
